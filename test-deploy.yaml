@@ -34,27 +34,3 @@ spec:
   - protocol: TCP
     port: 9090
     targetPort: 9090
----
-kind: Role
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
- namespace: staging
- name: test-jenkins
-rules:
-- apiGroups: [""]
-  resources: ["services","deployments"]
-  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
----
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
- name: test-jenkins-binding
- namespace: staging
-subjects:
-- kind: ServiceAccount
-  name: jenkins
-  namespace: cbcore
-roleRef:
- kind: Role
- name: test-jenkins
- apiGroup: rbac.authorization.k8s.io
