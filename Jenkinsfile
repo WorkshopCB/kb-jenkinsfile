@@ -14,9 +14,9 @@ pipeline {
             steps {
                 container('kubectl') {
                     echo 'Deploying k8 app'
-                    sh 'kubectl get pods -n staging'
+                    //sh 'kubectl get pods -n staging'
                     sh 'kubectl get deployments -n staging'
-                    //sh 'kubectl apply -f test-deploy.yaml -n staging'
+                    sh 'kubectl apply -f test-deploy.yaml -n staging'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 container('kubectl') {
                     echo 'Check Deployment and Service'
-                    sh 'kubectl get pods -n staging'
+                    sh 'kubectl get deployments -n staging'
                     //sh 'kubectl get deployments -n stating'
                 }
             }
