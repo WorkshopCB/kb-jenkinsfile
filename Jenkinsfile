@@ -6,6 +6,9 @@ pipeline {
             yamlFile 'kb-podTemplate.yaml'
         }
     }
+    triggers {
+        eventTrigger simpleMatch('dcanadillas/spring-petclinic:latest')
+    }
     stages {
         stage('Deploy') {
             steps {
