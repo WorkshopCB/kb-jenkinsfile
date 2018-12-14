@@ -53,7 +53,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: jenkins
-  namespace: staging
+  namespace: cbcore
 roleRef:
  kind: Role
  name: test-jenkins
