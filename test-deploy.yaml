@@ -8,7 +8,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: petclinic
+      app: petclinic
   template:
     metadata:
       labels:
