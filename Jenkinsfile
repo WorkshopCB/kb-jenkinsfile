@@ -25,7 +25,7 @@ pipeline {
                 container('kubectl') {
                     echo 'Check Deployment and Service'
                     sh 'kubectl get deployments -n staging'
-                    //sh 'kubectl get deployments -n stating'
+                    sh 'kubectl describe deployment petclinic -n stating'
                 }
             }
         }
