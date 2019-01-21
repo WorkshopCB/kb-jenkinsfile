@@ -17,6 +17,7 @@ spec:
       containers:
       - name: petclinic-test
         image: dcanadillas/spring-petclinic:latest
+        imagePullPolicy: Always
         command:
         ports:
           - containerPort: 8080
