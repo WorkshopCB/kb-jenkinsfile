@@ -33,6 +33,7 @@ pipeline {
         stage('Check') {
             steps {
                 container('kubectl') {
+                    //error 'Forcing error to check DevOptics'
                     echo 'Check Deployment and Service'
                     sh 'kubectl get deployments -n staging'
                     sh 'kubectl describe deployment petclinic -n staging'
