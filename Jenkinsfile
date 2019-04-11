@@ -35,7 +35,7 @@ pipeline {
                 container('kubectl') {
                     //error 'Forcing error to check DevOptics'
                     echo 'Check Deployment and Service'
-                    sh 'kubectl get deployments -n staging'
+                    sh 'kubectl get deployments,svc -n staging'
                     sh 'kubectl describe deployment petclinic -n staging'
                 }
             }
